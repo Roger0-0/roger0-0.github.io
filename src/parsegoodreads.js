@@ -8,16 +8,9 @@ async function loadCSV() {
         // Use jquery-csv to parse the CSV data
         const parsedData = $.csv.toObjects(data);
 
-        // Function to validate the date format
-        const isValidDate = (dateString) => {
-            // Check if the date is in the format YYYY/MM/DD
-            const regex = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
-            return regex.test(dateString);
-        };
-
-        // Filter out invalid dates and sort the valid ones
+        // Filter for book club books
         const validData = parsedData.filter(row => {
-            return row["Date Read"] && isValidDate(row["Date Read"]);
+            return row["Bookshelves"].includes('book-club');
         });
 
         validData.sort((a, b) => {
@@ -26,18 +19,14 @@ async function loadCSV() {
             return dateB - dateA; // Sort in descending order
         });
 
-
         const tableBody = $('#past-books-table tbody');
         validData.forEach(row => {
-            // Check if "book-club" is in the bookshelves column
-            if (row["Bookshelves"] && row["Bookshelves"].includes('book-club')) {
-                const tr = $('<tr></tr>');
-                tr.append(`<td>${row["Title"]}</td>`);
-                tr.append(`<td>${row["Author"]}</td>`);
-                tr.append(`<td>${row["My Rating"]}</td>`);
-                tr.append(`<td>${row["Date Read"]}</td>`);
-                tableBody.append(tr);
-            }
+            const tr = $('<tr></tr>');
+            tr.append(`<td>${row["Title"]}</td>`);
+            tr.append(`<td>${row["Author"]}</td>`);
+            tr.append(`<td>${row["My Rating"]}</td>`);
+            tr.append(`<td>${row["Date Read"]}</td>`);
+            tableBody.append(tr);
         });
     } catch (error) {
         console.error('Error loading CSV:', error);
