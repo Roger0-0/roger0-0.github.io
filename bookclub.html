@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1><u>Book Club</u></h1>
+    </header>
+    
+    <main>
+        <button onclick="window.location.href='index.html'">Home</button>
+        <!-- Current Book Section -->
+        <section id="current-book">
+            <h2>Current Book</h2>
+            <p><strong>Title:</strong> The Invisible Man</p>
+            <p><strong>Author:</strong> H.G Wells</p>
+            <p><strong>Date:</strong>2024/10/01</p>
+        </section>
+        
+        <!-- Past Books Table -->
+        <section id="past-books">
+            <h1>Past Book Club Reads</h1>
+            <table id="past-books-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Rating</th>
+                        <th>Date Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Book rows will be added here -->
+                </tbody>
+            </table>
+            <script src="src/parsegoodreads.js"></script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Roger's Book Club</p>
+    </footer>
+</body>
+</html>
+
