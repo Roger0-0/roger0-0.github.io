@@ -2,7 +2,7 @@
 const tiers = {
   "S": ["chilis.png"],
   "A": ["olive_garden.jpg",],
-  "B": ["outback.png", "cracker_barrel.png"],
+  "B": ["outback.jpg", "cracker_barrel.png"],
   "C": ["buffalo_wild_wings.jpg"],
   "D": ["ihop.png"]
 };
