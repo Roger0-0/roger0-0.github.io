@@ -1,10 +1,10 @@
 // Define your tier data here
 const tiers = {
-  "S": ["Item 1", "Item 2"],
-  "A": ["Item 3", "Item 4", "Item 5"],
-  "B": ["Item 6", "Item 7"],
-  "C": ["Item 8"],
-  "D": ["Item 9", "Item 10"]
+  "S": ["chilis.png"],
+  "A": ["olive_garden.jpg",],
+  "B": ["outback.png", "cracker_barrel.png"],
+  "C": ["buffalo_wild_wings.jpg"],
+  "D": ["ihop.png"]
 };
 
 const tierOrder = ["S", "A", "B", "C", "D"];
@@ -22,10 +22,11 @@ tierOrder.forEach(tier => {
   itemsDiv.className = "tier-items";
 
   tiers[tier].forEach(item => {
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "item";
-    itemDiv.textContent = item;
-    itemsDiv.appendChild(itemDiv);
+    let img = document.createElement("img");
+    img.src = "images/tierlist_pics/" + item
+    img.height = 150
+    img.width = 150
+    itemsDiv.appendChild(img);
   });
 
   tierDiv.appendChild(label);
