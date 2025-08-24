@@ -2,7 +2,7 @@ async function loadCSV() {
     // I export all of my books on Goodreads to csv,
     // This function parses that csv for only book club books
     try {
-        const response = await fetch('goodreads_library_export.csv');
+        const response = await fetch('static/goodreads_library_export.csv');
         const data = await response.text();
 
         // Use jquery-csv to parse the CSV data

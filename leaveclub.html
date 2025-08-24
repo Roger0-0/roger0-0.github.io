@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave the Club</title>
+  <link rel="stylesheet" href="css/leaveclub.css" />
+<script src="src/leaveclub.js"></script>
+</head>
+<body>
+  <h1>Rogers Club Network Membership Cancellation</h1>
+  <p>We're sorry to see you go. Please complete the form below.</p>
+
+  <form id="leaveForm" action="?" method="POST" novalidate>
+    <label for="reason">Reason for leaving?</label>
+    <textarea id="reason" name="reason" required></textarea>
+
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <div class="g-recaptcha"
+         data-sitekey="6LcTN7ArAAAAAMNqJ6GOInwhXBf4ZhdyJ_lzqRdq"
+         data-callback="recaptchaCompleted"></div>
+
+    <button type="submit" id="cancel_button" onclick="myButtonClicked(event)" disabled>Submit</button>
+    <p id="errorMsg" class="error"></p>
+    </form>
+
+</body>
+</html>
+
